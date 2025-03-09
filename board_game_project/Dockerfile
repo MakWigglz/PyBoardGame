@@ -10,9 +10,6 @@ COPY . .
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app.main:app"]
 
 
-docker build -t your-image-name .
-
 
 RUN the Docker Container:**
 
-Docker run -it --rm your-image-name
