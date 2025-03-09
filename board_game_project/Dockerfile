@@ -13,6 +13,6 @@ CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app.main:app"]
 docker build -t your-image-name .
 
 
-Run the Docker Container:**
+RUN the Docker Container:**
 
-docker run -it --rm your-image-name
+Docker run -it --rm your-image-name
