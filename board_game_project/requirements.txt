@@ -1,4 +1,4 @@
- ```plaintext
+
  anyio
  argon2-cffi
  argon2-cffi-bindings
@@ -132,4 +132,4 @@
  websocket-client
  Werkzeug
  wsproto
- ```
+
