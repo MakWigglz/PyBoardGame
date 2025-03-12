@@ -33,6 +33,7 @@
  gitdb
  GitPython
  greenlet
+ gunicorn
  h11
  httpcore
  httpx
@@ -89,6 +90,7 @@
  pure_eval
  pycparser
  Pygments
+ pygame
  pyparsing
  python-dateutil
  python-engineio
