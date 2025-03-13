@@ -90,7 +90,6 @@
  pure_eval
  pycparser
  Pygments
- pygame
  pyparsing
  python-dateutil
  python-engineio
@@ -134,4 +133,7 @@
  websocket-client
  Werkzeug
  wsproto
+pygame
+reportlab
+gunicorn  # Only if your server uses Gunicorn
 
