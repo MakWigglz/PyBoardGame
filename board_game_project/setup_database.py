@@ -1,36 +1,35 @@
-import sqlite3
-import json
-
-DATABASE_FILE = 'board_game.db'
-JSON_FILE = '/Users/amakki/Documents/Coding-Design/GitHub/PythonProject/PyBoardGame/board_game_project/data/paragraphs.json'
-
-def setup_database():
-    conn = sqlite3.connect(DATABASE_FILE)
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS content (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            square_id INTEGER UNIQUE,
-            paragraph TEXT
-        )
-    ''')
-
-    try:
-        with open(JSON_FILE, 'r', encoding='utf-8') as jsonfile:
-            data = json.load(jsonfile)
-            for i, item in enumerate(data):
-                cursor.execute("INSERT INTO content (square_id, paragraph) VALUES (?, ?)", (i, item['content']))
-    except FileNotFoundError:
-        print(f"Error: JSON file '{JSON_FILE}' not found.")
-        return
-    except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}")
-        return
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return
-
-    conn.commit()
-    conn.close()
-    print("Database setup complete.")
-setup_database()
+# setup_database.py
+class SimpleDatabase:
+    def __init__(self):
+        self.data = {}
+    def insert(self, key, value):
+        self.data[key] = value
+    def fetch(self, key):
+        return self.data.get(key)
+    def display_all(self):
+        return self.data.items()
+# Example usage
+if __name__ == "__main__":
+    db = SimpleDatabase()
+    
+    # Insert topics with multiple paragraphs
+    db.insert("square_1", {
+        "color": "red",
+        "subject": "Math",
+        "paragraphs": [
+            "Math is the study of numbers, shapes, and patterns.",
+            "Algebra is one of the main branches of mathematics.",
+            "Geometry deals with the properties and relations of points, lines, surfaces, and solids."
+        ]
+    })
+    db.insert("square_2", {
+        "color": "blue",
+        "subject": "Science",
+        "paragraphs": [
+            "Science is the systematic study of the structure and behavior of the physical and natural world.",
+            "Physics, chemistry, and biology are the main branches of science.",
+            "Scientific methods involve observation, experimentation, and analysis."
+        ]
+    })
+    # Add more squares as needed...
+    print(db.display_all())
