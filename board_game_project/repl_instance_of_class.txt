@@ -1,0 +1,135 @@
+Python 3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+import sqlite3
+import tkinter as tk
+from tkinter import simpledialog, messagebox
+import random
+
+class Square:
+    board_size = 64
+    board_color = ["black", "white", "red", "yellow", "green"]
+    user_input = ["read", "unread", "like", "explain"]
+    @classmethod
+    def available_colors(cls):
+        return cls.board_color
+    @classmethod
+    def user_feedback(cls):
+        return cls.user_input
+    def __init__(self, row, column, title, paragraph, canvas_coords):
+        self.row = row
+        self.column = column
+        self.title = title
+        self.paragraph = paragraph
+        self.canvas_coords
+    def display_info(self):
+        return f"Title: {self.title}\nParagraph: {self.paragraph}"
+    def load_square_data_from_db(db_path):
+
+    try:
+        
+SyntaxError: expected an indented block after function definition on line 19
+db_path = /Users/amakki/Documents/Coding-Design/GitHub/PythonProject/PyBoardGame/class_based_modular_pyboard/my_database.db
+SyntaxError: invalid syntax
+>>> import sqlite3
+>>> import tkinter as tk
+>>> from tkinter import simpledialog, messagebox
+>>> import random
+SyntaxError: invalid syntax
+import sqlite3
+import tkinter as tk
+from tkinter import simpledialog, messagebox
+import random
+class Square:
+board_size = 64
+SyntaxError: expected an indented block after class definition on line 1
+class Square:
+    board_size = 64
+    board_color = ["black", "white", "red", "yellow", "green"]
+    user_input = ["read", "unread", "like", "explain"]
+    @classmethod
+    def available_colors(cls):
+        return cls.board_color
+    @classmethod
+    def user_feedback(cls):
+        return cls.user_input
+    def __init__(self, row, column, title, paragraph, canvas_coords):
+        self.row=row
+        self.column=column
+        self.title=title
+        self.paragraph=paragraph
+        self.canvas_coords=canvas_coords
+    def display_info(self):
+        return f"Title: {self.title}\nParagraph: {self.paragraph}"
+    def load_square_data_from_db(db_path):
+    try:
+        
+SyntaxError: expected an indented block after function definition on line 19
+class Square:
+    board_size = 64
+    board_color = ["black", "white", "red", "yellow", "green"]
+    user_input = ["read", "unread", "like", "explain"]
+    @classmethod
+    def available_colors(cls):
+        return cls.board_color
+    @classmethod
+    def user_feedback(cls):
+        return cls.user_input
+    def __init__(self, row, column, title, paragraph, canvas_coords):
+        self.row=row
+        self.column=column
+        self.title=title
+        self.paragraph=paragraph
+        self.canvas_coords=canvas_coords
+    def display_info(self):
+        return f"Title: {self.title}\nParagraph: {self.paragraph}"
+    def load_square_data_from_db(db_path):
+        try:
+            connection=sqlite3.connect(db_path)
+            cursor=connection.cursor()
+            cursor.execute("SELECT title, content FROM posts")
+            rows=cursor.fetchall()
+            connection.close()
+            if len(rows)!=Square.board_size:
+                raise ValueError(
+                    f"Database must contain {Square.board_size} entries."
+            )
+            return [{'title': row[0], 'paragraph': row[1]} for row in rows]
+        except sqlite3.Error as e:
+            print(f"Error loading data: {e}")
+            return None
+
+        
+ Square.board_size
+64
+
+SyntaxError: unexpected indent
+my_square = Square(0, 0, "Intro", "Welcome to the Game", (100, 100))
+my_square.row
+0
+my_square.column
+0
+my_square.title
+'Intro'
+my_square.paragraph
+'Welcome to the Game'
+my_square.canvas_coords
+(100, 100)
+my_square.display_info()
+'Title: Intro\nParagraph: Welcome to the Game'
+db_path = '/Users/amakki/Documents/Coding-Design/GitHub/PythonProject/PyBoardGame/class_based_modular_pyboard/my_database.db'
+Square.load_square_data_from_db(db_path)
+[{'title': 'Astronomy', 'paragraph': "Astronomy is the study of celestial objects, space, and the universe as a whole. It encompasses the observation and analysis of stars, galaxies, and planets. Astrophysics applies physics to understand the properties and behavior of these celestial bodies. Cosmology studies the universe's origin, evolution, and fate. Radio astronomy uses radio waves to explore distant objects. Planetary science investigates the composition and formation of planets. Stellar astronomy focuses on the lifecycle of stars, from their birth in nebulae to their death as black holes or supernovae. Space exploration involves human and robotic missions to investigate extraterrestrial environments. Exoplanet research searches for planets orbiting other stars. Gravitational wave astronomy detects ripples in spacetime from cosmic events. Optical telescopes, both ground-based and in orbit, continue to expand our understanding of the vast cosmos."}, {'title': 'Geology', 'paragraph': "Geology is the study of the Earth's physical structure, substances, and processes. It investigates how tectonic plates shape mountains and valleys. Volcanology explores magma, eruptions, and lava formations. Seismology studies earthquakes and seismic waves. Mineralogy examines the chemical composition of Earth's minerals. Paleontology, a subfield, analyzes fossils to uncover past life forms. Geomorphology explains how landscapes evolve over time. Hydrogeology looks at groundwater flow and its impact. Stratigraphy examines layered rock to interpret Earth's historical changes. Geologists study resources like oil, gas, and metals. Environmental geology assesses how human activities affect our planet, promoting sustainability and disaster mitigation."}, {'title': 'Geology', 'paragraph': "Geology is the study of the Earth's physical structure, substances, and processes. It investigates how tectonic plates shape mountains and valleys. Volcanology explores magma, eruptions, and lava formations. Seismology studies earthquakes and seismic waves. Mineralogy examines the chemical composition of Earth's minerals. Paleontology, a subfield, analyzes fossils to uncover past life forms. Geomorphology explains how landscapes evolve over time. Hydrogeology looks at groundwater flow and its impact. Stratigraphy examines layered rock to interpret Earth's historical changes. Geologists study resources like oil, gas, and metals. Environmental geology assesses how human activities affect our planet, promoting sustainability and disaster mitigation."}, {'title': 'Zoology', 'paragraph': 'Zoology is the study of animals, their behavior, physiology, and evolution. It covers vertebrates and invertebrates, studying their anatomy and adaptation. Ethology analyzes animal behavior in natural settings. Comparative physiology examines bodily functions across species. Evolutionary zoology traces the origins and diversification of animals. Marine biology focuses on oceanic creatures like fish and cetaceans. Entomology studies insects, the most diverse animal group. Herpetology examines amphibians and reptiles. Conservation zoology seeks to protect wildlife and biodiversity. Zoos and aquariums contribute to education, research, and species preservation. Advances in zoology enhance our understanding of animal life and its interconnection with human welfare.'}, {'title': 'Ecology', 'paragraph': 'Ecology is the study of interactions between organisms and their environment. It examines how organisms interact with each other and their surroundings. Key concepts include food webs, energy flow, and nutrient cycles. Population ecology studies how populations grow and interact. Community ecology explores the relationships between different species in an area. Ecosystem ecology looks at the flow of energy and matter through ecosystems. Landscape ecology examines how spatial patterns affect ecological processes. Conservation ecology aims to protect biodiversity and natural habitats. Restoration ecology seeks to repair damaged ecosystems. Behavioral ecology studies how animal behavior is shaped by ecological factors. Evolutionary ecology explores how ecological interactions drive evolution. Global ecology examines large-scale patterns and processes, like climate change.'}, {'title': 'Meteorlogy', 'paragraph': 'Meteorology is the study of the atmosphere, weather, and climate. It involves the study of atmospheric phenomena, weather patterns, and climate change. Meteorologists use tools like weather balloons, satellites, and radar to gather data. They analyze this data to forecast weather conditions. Climate scientists study long-term trends and changes in climate. Meteorology is crucial for understanding and predicting severe weather events. It also plays a role in aviation, agriculture, and public safety. The study of atmospheric chemistry and physics is central to meteorology.'}, {'title': 'Meteorology', 'paragraph': 'Meteorology is the study of the atmosphere, weather, and climate. It involves the study of atmospheric phenomena, weather patterns, and climate change. Meteorologists use tools like weather balloons, satellites, and radar to gather data. They analyze this data to forecast weather conditions. Climate scientists study long-term trends and changes in climate. Meteorology is crucial for understanding and predicting severe weather events. It also plays a role in aviation, agriculture, and public safety. The study of atmospheric chemistry and physics is central to meteorology.'}, {'title': 'Ecology', 'paragraph': 'Ecology is the study of interactions between organisms and their environment. It examines how organisms interact with each other and their surroundings. Key concepts include food webs, energy flow, and nutrient cycles. Population ecology studies how populations grow and interact. Community ecology explores the relationships between different species in an area. Ecosystem ecology looks at the flow of energy and matter through ecosystems. Landscape ecology examines how spatial patterns affect ecological processes. Conservation ecology aims to protect biodiversity and natural habitats. Restoration ecology seeks to repair damaged ecosystems. Behavioral ecology studies how animal behavior is shaped by ecological factors. Evolutionary ecology explores how ecological interactions drive evolution. Global ecology examines large-scale patterns and processes, like climate change.'}, {'title': 'Oceanography', 'paragraph': 'Oceanography is the study of the physical and biological aspects of the ocean. It includes the study of marine ecosystems, currents, and the seafloor. Oceanographers study the physical, chemical, and biological properties of the ocean. They also investigate the interactions between the ocean and the atmosphere. Marine geology examines the structure and composition of the ocean floor. Chemical oceanography studies the chemical composition of seawater. Biological oceanography explores marine life and ecosystems. Physical oceanography looks at ocean currents, waves, and tides. Oceanographers use tools like submersibles and satellites to gather data. They also study the impact of human activities on marine environments. Climate change and pollution are major concerns in oceanography. Oceanographers work to understand and protect marine resources.'}, {'title': 'Paleontology', 'paragraph': 'Paleontology is the study of ancient life through the examination of fossils. It involves the study of fossils to understand past life forms and environments. Paleontologists examine fossilized remains of plants, animals, and microorganisms. They use fossils to reconstruct ancient ecosystems and trace evolutionary lineages. The fossil record provides evidence of past climate changes and mass extinction events. Paleontology is closely linked to geology, biology, and archaeology. It helps us understand the history of life on Earth and the processes that have shaped it. Paleontologists also study the formation of fossils and the taphonomic processes that affect them. They use various techniques to date fossils and analyze their chemical composition. The study of dinosaurs is a well-known aspect of paleontology. Paleontologists also study ancient plants, invertebrates, and microorganisms.'}, {'title': 'Anthropology', 'paragraph': 'Anthropology is the study of humans, their cultures, and societies throughout history. It explores the diversity of human cultures, languages, and social structures. Cultural anthropology examines the beliefs, customs, and social organization of different societies. Linguistic anthropology studies the role of language in shaping culture and thought. Biological anthropology investigates human evolution, genetics, and physical variations. Archaeology, a subfield, uncovers past human societies through material remains. Applied anthropology uses anthropological knowledge to address real-world problems. Medical anthropology examines health, illness, and healing in different cultural contexts. Anthropologists study kinship, religion, and political systems. They also explore how globalization and modernization affect traditional societies.'}, {'title': 'Archaeology', 'paragraph': 'Archaeology is the study of human history and prehistory through the excavation of sites and analysis of artifacts. It involves excavating and analyzing artifacts, structures, and other material remains. Archaeologists study ancient civilizations, cultures, and daily life. They use various methods to date and interpret their findings. Archaeology is closely linked to history, anthropology, and geology. It helps us understand human evolution, social organization, and technological development. Archaeological sites range from ancient cities to prehistoric settlements. Underwater archaeology explores shipwrecks and submerged sites. Archaeologists also work to preserve and protect cultural heritage. They use scientific techniques to analyze artifacts and reconstruct past environments. The study of human remains is a key aspect of archaeology.'}, {'title': 'Sociology', 'paragraph': 'Sociology is the study of the development, structure, and functioning of human society.'}, {'title': 'Psychology', 'paragraph': 'Psychology is the study of the mind and behavior.'}, {'title': 'Philosophy', 'paragraph': 'Philosophy is the study of fundamental questions about existence, knowledge, values, and reason.'}, {'title': 'Economics', 'paragraph': 'Economics is the study of the production, distribution, and consumption of goods and services.'}, {'title': 'Political Science', 'paragraph': 'Political Science is the study of governments, public policies, and political behavior.'}, {'title': 'History', 'paragraph': 'History is the study of past events, particularly in human affairs.'}, {'title': 'Linguistics', 'paragraph': 'Linguistics is the scientific study of language and its structure.'}, {'title': 'Art history', 'paragraph': 'Art History is the study of art and artistic movements throughout history.'}, {'title': 'Lit.& Drama', 'paragraph': 'Literature is the study of written works, such as fiction, poetry, and drama.'}, {'title': 'Music', 'paragraph': 'Musicology is the study of music, including its history, theory, and cultural context.'}, {'title': 'Theater', 'paragraph': 'Theater Studies is the study of theatrical performance, including its history, theory, and practice.'}, {'title': 'religious studies', 'paragraph': 'Religious Studies is the academic study of religions, including their beliefs, practices, and historical contexts.'}, {'title': 'Ethics', 'paragraph': "Ethics is the study of moral principles that govern a person's behavior or conducting of an activity."}, {'title': 'Logic', 'paragraph': 'Logic is the study of reasoning, including the principles of valid inference and argument.'}, {'title': 'Aesthetics', 'paragraph': 'Aesthetics is the study of beauty, art, and taste.'}, {'title': 'education', 'paragraph': 'Education is the study of how people learn and the best practices for teaching.'}, {'title': 'Criminology', 'paragraph': 'Criminology is the study of crime, criminal behavior, and the criminal justice system.'}, {'title': 'Law', 'paragraph': 'Law is the study of legal systems, including the creation, application, and interpretation of laws.'}, {'title': 'Engineering', 'paragraph': 'Engineering is the application of scientific principles to design and build structures, machines, and systems.'}, {'title': 'medicine', 'paragraph': 'Medicine is the science and practice of diagnosing, treating, and preventing illness.'}, {'title': 'nursing', 'paragraph': 'Nursing is the practice of caring for individuals, families, and communities to maintain and improve health.'}, {'title': 'Dentistry', 'paragraph': 'Dentistry is the branch of medicine that focuses on the diagnosis, prevention, and treatment of oral diseases.'}, {'title': 'Pharmacy', 'paragraph': 'Pharmacy is the science and practice of preparing, dispensing, and reviewing drugs and providing additional clinical services.'}, {'title': 'Veterinary Medicine', 'paragraph': 'Veterinary Medicine is the branch of medicine that deals with the prevention, diagnosis, and treatment of animal diseases.'}, {'title': 'public health', 'paragraph': 'Public Health is the science of protecting and improving the health of people and their communities.'}, {'title': 'physical therapy', 'paragraph': 'Physical Therapy is the treatment of disease injury or deformity by physical methods such as massage, heat treatment and steam exercise. https://amtrustfinancial.com/blog/small-business physical-therapy-for-chronic-pain'}, {'title': 'occupational therapy', 'paragraph': 'Occupational Therapy is the use of particular activities as an aid to recovery from physical or mental illness.'}, {'title': 'Nutrition', 'paragraph': 'Nutrition is the study of nutrients and how they are used by the body.'}, {'title': 'Agriculture', 'paragraph': 'Agriculture is the science and practice of farming, including the cultivation of soil and the rearing of animals to produce food.'}, {'title': 'Forestry', 'paragraph': 'Forestry is the science and practice of managing forests and woodlands.'}, {'title': 'Horticulture', 'paragraph': 'Horticulture is the art or practice of garden cultivation and management.'}, {'title': 'environmental science', 'paragraph': 'Environmental Science is the study of the environment and the solution of environmental problems.'}, {'title': 'Earth Science', 'paragraph': 'Earth Science is the study of the Earth and its atmosphere.'}, {'title': 'Marine Biology', 'paragraph': 'Marine Biology is the study of marine organisms, their behaviors, and interactions with the environment.'}, {'title': 'Micro Biology', 'paragraph': 'Microbiology is the study of microorganisms, including viruses, bacteria, fungi, and protozoa.'}, {'title': 'Genetics', 'paragraph': 'Genetics is the study of heredity and the variation of inherited characteristics.'}, {'title': 'Biochemistry', 'paragraph': 'Biochemistry is the study of chemical processes within and relating to living organisms.'}, {'title': 'molecular biology', 'paragraph': 'Molecular Biology is the study of biological molecules and the molecular mechanisms of biological processes.'}, {'title': 'Cell Biology', 'paragraph': 'Cell Biology is the study of cell structure and function.'}, {'title': 'Neuro-Scionce', 'paragraph': 'Neuroscience is the study of the nervous system, including the brain and spinal cord.'}, {'title': 'Immunology', 'paragraph': 'Immunology is the study of the immune system and immune responses.'}, {'title': 'Virology', 'paragraph': 'Virology is the study of viruses and viral diseases.'}, {'title': 'Parasitology', 'paragraph': 'Parasitology is the study of parasites and their relationships with host organisms.'}, {'title': 'Pathology', 'paragraph': 'Pathology is the study of diseases, including their causes, processes, development, and consequences.'}, {'title': 'Epidomology', 'paragraph': 'Epidemiology is the study of the distribution and determinants of health-related states and events in populations.'}, {'title': 'Toxicology', 'paragraph': 'Toxicology is the study of the adverse effects of chemicals on living organisms.'}, {'title': 'Pharmacology', 'paragraph': 'Pharmacology is the study of drugs, including their origins, composition, and effects on the body.'}, {'title': 'Biophysics', 'paragraph': 'Biophysics is the study of biological processes using the principles and methods of physics.'}, {'title': 'Bioinformatics', 'paragraph': 'Bioinformatics is the application of computer technology to the management and analysis of biological data.'}, {'title': 'Astrobiology', 'paragraph': 'Astrobiology is the study of the origin, evolution, and potential for life elsewhere in the universe.'}, {'title': 'Cell Biology', 'paragraph': "The biology of living cells also known as cytology, is the branch of biology that focuses on the structure, function, and behavior of cells, which are the fundamental units of life. Cells are the building blocks of all living organisms, ranging from unicellular bacteria to complex multicellular organisms like plants and animals. This field of study encompasses various aspects, including the cellular membrane's composition, organelles' roles, and the processes that occur within cells, such as metabolism, energy production, and cell division. Understanding cell biology is crucial as it provides insights into how organisms grow, develop, and respond to their environments, and it lays the foundation for advancements in medicine, genetics, and biotechnology. Research in cell biology has significant implications for health and disease. By studying how cells function in normal and pathological states, scientists can uncover the mechanisms underlying various diseases, including cancer, diabetes, and neurodegenerative disorders. Techniques such as microscopy, cell culture, and molecular biology methods allow researchers to observe cellular processes in real time and manipulate cellular functions. This research not only enhances our understanding of disease mechanisms but also aids in the development of targeted therapies and regenerative medicine approaches. As a result, cell biology plays a pivotal role in advancing medical science and improving human health."}, {'title': 'Oceanography', 'paragraph': 'Oceanography is the study of the physical and biological aspects of the ocean. It includes the study of marine ecosystems, currents, and the seafloor. Oceanographers study the physical, chemical, and biological properties of the ocean. They also investigate the interactions between the ocean and the atmosphere. Marine geology examines the structure and composition of the ocean floor. Chemical oceanography studies the chemical composition of seawater. Biological oceanography explores marine life and ecosystems. Physical oceanography looks at ocean currents, waves, and tides. Oceanographers use tools like submersibles and satellites to gather data. They also study the impact of human activities on marine environments. Climate change and pollution are major concerns in oceanography. Oceanographers work to understand and protect marine resources.'}]
+class BoardGame:
+    def __init__(self, master, db_path):
+        self.master=master
+        master.title("Educational Board Game")
+        self.canvas_width = 600
+        self.canvas_height = 600
+        self.board_rows = 8
+        self.board_cols = 8
+        self.square_size = self.canvas_width
+        self.canvas = tk.Canvas(master, width=self.canvas_width, height=self.canvas_height, bg="yellow")
+        self.canvas.pack()
+        self.square_data = load_square_data_from_db(db_path)
+        if self.square_data:
+            
